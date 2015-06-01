@@ -37,20 +37,6 @@
 
 <body>
 
-<div class="wr-modalpopup">
-    <div class="modalpopup-container">
-        <div class="modalpopup-close-btn" onclick="hidePopup();">
-            <span class="fw-stack">
-                <i class="fw fw-ring fw-stack-2x"></i>
-                <i class="fw fw-left-arrow fw-stack-1x"></i>
-            </span>
-            GO BACK
-        </div>
-        <div class="modalpopup-content"><!-- dynamic content --></div>
-    </div>
-    <div class="modalpopup-bg"></div>
-</div>
-
 <div class="wr-notification-bar wr-settings">
 
 
@@ -186,7 +172,7 @@
     <!-- /common navigation -->
 
     <!-- content/body -->
-    <div class="wr-device-list row">
+    <div class="wr-dashboard-designer row">
 
         <div class="wr-hidden-operations wr-advance-operations">
             <div class="row no-gutter">
@@ -313,61 +299,19 @@
 
     <!-- footer -->
     <footer class="footer">
-        <p>Mobile Device Manager v.2.0.0 | &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://wso2.com/" target="_blank"><i class="fw fw-wso2"></i> Inc</a>. All Rights Reserved.</p>
+        <p>UES Dashboard Designer v.1.0.0 | &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://wso2.com/" target="_blank"><i class="fw fw-wso2"></i> Inc</a>. All Rights Reserved.</p>
     </footer>
     <!-- /footer -->
 
 </div>
 
-<div id="content-filter-types" style="display: none">
-    <div class="sort-title">Sort By</div>
-    <div class="sort-options">
-    	<a href="#">Device Name<span class="ico-sort-asc"></span></a>
-    	<a href="#">OS</a>
-    	<a href="#">User</a>
-    	<a href="#">Model</a>   
-    </div>
-</div>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/assetmenu.js"></script>
 <script src="js/operationsmenu.js"></script>
-<script src="js/deviceview.js"></script>
 <script src="js/notificationbar.js"></script>
+<script src="js/common.js"></script>
 
-<script type="text/javascript">
-
-$( document ).ready(function() {
-
-    $('[data-toggle="tooltip"]').tooltip();   
-
-    $("[data-toggle=popover]").popover();
-
-    $(".ctrl-filter-type-switcher").popover({
-        html : true, 
-        content: function() {
-          return $('#content-filter-types').html();
-        }
-    });    
-
-	$('#nav').affix({
-	      offset: {
-	        top: $('header').height()
-	      }
-	});	 
-});
-
-function openCollapsedNav(){
-    $('.wr-hidden-nav-toggle-btn').addClass('active');
-    $('#hiddenNav').slideToggle('slideDown', function(){
-        if($(this).css('display') == 'none'){
-            $('.wr-hidden-nav-toggle-btn').removeClass('active');
-        }
-    });
-}
-
-</script>
 
 </body>
 </html>

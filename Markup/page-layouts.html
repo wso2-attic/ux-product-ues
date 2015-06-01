@@ -21,7 +21,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Device Manager</title>
+    <title>Dashboards</title>
 
     <link rel="icon" href="favicon.png" type="image/x-icon" />
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -37,10 +37,6 @@
 
 <body>
 
-<div class="wr-modelpopup">
-    <div class="modelpopup-content"><!-- dynamic content --></div>
-    <div class="modelpopup-bg"></div>
-</div>
 
 <div class="container col-lg-12 col-md-12 col-sm-12">
 
@@ -122,7 +118,7 @@
 
 
                         <div class="col-md-3 col-lg-2">
-                            <div class="lst-group-page-layouts">
+                            <div class="tile-pagelayout">
                                 <div class="tile-name">3 Cols top 1 col bottom</div>
                                 <div>
                                     <div class="tile-stats">
@@ -149,7 +145,7 @@
                         </div>  
 
                         <div class="col-md-3 col-lg-2">
-                            <div class="lst-group-page-layouts">
+                            <div class="tile-pagelayout">
                                 <div class="tile-name">Page layout #1</div>
                                 <div>
                                     <div class="tile-stats">
@@ -176,7 +172,7 @@
                         </div>  
 
                         <div class="col-md-3 col-lg-2">
-                            <div class="lst-group-page-layouts">
+                            <div class="tile-pagelayout">
                                 <div class="tile-name">Page layout #2</div>
                                 <div>
                                     <div class="tile-stats">
@@ -203,7 +199,7 @@
                         </div>  
 
                         <div class="col-md-3 col-lg-2">
-                            <div class="lst-group-page-layouts">
+                            <div class="tile-pagelayout">
                                 <div class="tile-name">Page layout #3</div>
                                 <div>
                                     <div class="tile-stats">
@@ -230,7 +226,7 @@
                         </div>  
 
                         <div class="col-md-3 col-lg-2">
-                            <div class="lst-group-page-layouts">
+                            <div class="tile-pagelayout">
                                 <div class="tile-name">Page layout #4</div>
                                 <div>
                                     <div class="tile-stats">
@@ -257,7 +253,7 @@
                         </div>  
 
                         <div class="col-md-3 col-lg-2">
-                            <div class="lst-group-page-layouts">
+                            <div class="tile-pagelayout">
                                 <div class="tile-name">Page layout #5</div>
                                 <div>
                                     <div class="tile-stats">
@@ -302,80 +298,18 @@
 
     <!-- footer -->
     <footer class="footer">
-        <p>Mobile Device Manager v.2.0.0 | &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://wso2.com/" target="_blank"><i class="fw fw-wso2"></i> Inc</a>. All Rights Reserved.</p>
+        <p>UES Dashboard Designer v.1.0.0 | &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://wso2.com/" target="_blank"><i class="fw fw-wso2"></i> Inc</a>. All Rights Reserved.</p>
     </footer>
     <!-- /footer -->
 
 </div>
 
-<div id="content-filter-types" style="display: none">
-    <div class="sort-title">Sort By</div>
-    <div class="sort-options">
-    	<a href="#">Device Name<span class="ico-sort-asc"></span></a>
-    	<a href="#">OS</a>
-    	<a href="#">User</a>
-    	<a href="#">Model</a>   
-    </div>
-</div>
 
 <script src="js/jquery.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/assetmenu.js"></script>
 <script src="js/operationsmenu.js"></script>
-
-<script type="text/javascript">
-
-$( document ).ready(function() {
-
-    $('[data-toggle="tooltip"]').tooltip();   
-
-    $("[data-toggle=popover]").popover();
-
-    $(".ctrl-filter-type-switcher").popover({
-        html : true, 
-        content: function() {
-          return $('#content-filter-types').html();
-        }
-    });    
-
-	$('#nav').affix({
-	      offset: {
-	        top: $('header').height()
-	      }
-	});
-
-    function addSortableIndexNumbers(){
-        $('.wr-sortable .list-group-item').not('.ui-sortable-placeholder').each(function(i){
-            $('.wr-sort-index', this).html(i+1);
-        });
-    }
-
-    /* sorting function */
-    $(function() {
-        addSortableIndexNumbers();
-        var sortableElem = '.wr-sortable';
-        $(sortableElem).sortable({
-            beforeStop: function(event, ui){
-                var sortedIDs = $(this).sortable('toArray');
-                console.log(sortedIDs);
-                addSortableIndexNumbers();
-            }
-        });
-        $(sortableElem).disableSelection();
-    });
-});
-
-function openCollapsedNav(){
-    $('.wr-hidden-nav-toggle-btn').addClass('active');
-    $('#hiddenNav').slideToggle('slideDown', function(){
-        if($(this).css('display') == 'none'){
-            $('.wr-hidden-nav-toggle-btn').removeClass('active');
-        }
-    });
-}
-
-</script>
+<script src="js/common.js"></script>
 
 </body>
 </html>

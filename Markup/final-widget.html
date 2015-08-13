@@ -1,0 +1,195 @@
+<!--
+    * Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+    *
+    * WSO2 Inc. licenses this file to you under the Apache License,
+    * Version 2.0 (the "License"); you may not use this file except
+    * in compliance with the License.
+    * You may obtain a copy of the License at
+    *
+    * http://www.apache.org/licenses/LICENSE-2.0
+    *
+    * Unless required by applicable law or agreed to in writing,
+    * software distributed under the License is distributed on an
+    * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    * KIND, either express or implied. See the License for the
+    * specific language governing permissions and limitations
+    * under the License.
+    -->
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboards</title>
+        <link rel="icon" href="favicon.png" type="image/x-icon" />
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/custom-common.css" rel="stylesheet">
+        <link href="css/custom-desktop.css" rel="stylesheet">
+        <link href="css/custom-theme.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container col-lg-12 col-md-12 col-sm-12">
+            <!-- header -->
+            <header>
+                <div class="row wr-global-header">
+                    <div class="col-xs-8 col-sm-6 col-lg-8 app-logo">
+                        <a href="home.html">
+                            <img src="images/logo.png" />
+                            <h2 class="app-title">Dashboard Designer</h2>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-6 col-lg-4 wr-auth-container">
+                        <div class="wr-auth pull-right">
+                            <a href="#" data-toggle="dropdown">
+                                <div class="auth-img">
+                                    Administrator
+                                    <span class="fw-stack-md fw-lg">
+                                    <i class="fw fw-user fw-stack-1-5x"></i>
+                                    </span>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="cu-arrow"></div>
+                                <div class="dropdown-menu-content">
+                                    <a class="filter-item">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- /header -->
+            <!-- secondary header - app bar -->
+            <div id="nav" class="row wr-app-bar">
+                <div class="col-md-9 wr-action-container">
+                    <div class="wr-action-btn-bar">
+                        <a href="javascript:openCollapsedNav()" class="cu-btn wr-hidden-nav-toggle-btn">
+                        <span class="fw-stack">
+                        <i class="fw fw-tiles fw-stack-1-5x"></i>
+                        </span>
+                        </a><a class="cu-btn page-title" href='dashboards.html'>
+                        <span class="fw-stack"></span>
+                        Dashboards
+                        </a><a href="dashboards.html" class="cu-btn">
+                        <span class="fw-stack">
+                        <i class="fw fw-ring fw-stack-2x"></i>
+                        <i class="fw fw-cancel fw-stack-1x"></i>
+                        </span>
+                        Cancel
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- secondary header - app bar -->
+            <!-- common navigation -->
+            <div id="hiddenNav" class="wr-hidden-nav">
+                <ul>
+                    <li><a href="dashboards.html"><i class="fw fw-user"></i>Dashboards</a></li>
+                    <li><a href="page-layouts.html"><i class="fw fw-policy"></i>Page Layouts</a></li>
+                </ul>
+            </div>
+            <!-- /common navigation -->
+            <!-- content/body -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- content -->
+                    <div class="container col-centered wr-content">
+                        <div class="wr-form">
+                            <h1 class="wr-title">Create Widget</h1>
+                            <div class="row wr-wizard">
+                                <div class="col-md-4 col-xs-4">
+                                    <div class="itm-wiz ">
+                                        <div class="wiz-no">1</div>
+                                        <div class="wiz-lbl hidden-xs"><span>Table/Event Stream</span></div>
+                                    </div>
+                                    <br class="c-both" />
+                                </div>
+                                <div class="col-md-4 col-xs-4">
+                                    <div class="itm-wiz itm-wiz-current">
+                                        <div class="wiz-no">2</div>
+                                        <div class="wiz-lbl hidden-xs"><span>Generate & Complete</span></div>
+                                    </div>
+                                    <br class="c-both" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 border-right-light">
+                                    <h4>Configuration</h4>
+                                    <form class="form-horizontal">
+                                        <label class="wr-input-label">Chart Type</label>
+                                        <div class="wr-input-control">
+                                            <select class="form-control" id="chartType" name="chartType">
+                                                <option value="">--Select--</option>
+                                                <option value="bar">Bar</option>
+                                                <option value="line">Line</option>
+                                                <option value="area">Area</option>
+                                                <option value="tabular">Table</option>
+                                                <option value="arc">Arc</option>
+                                                <option value="scatter">Scatter</option>
+                                                <option value="map">Map</option>
+                                                <!-- <option value="stackedBar">StackedBar</option>
+                                                    <option value="groupedBar">GroupedBar</option>
+                                                    <option value="stackedArea">StackedArea</option>
+                                                    <option value="multiArea">MultiArea</option>
+                                                    <option value="scatter">Scatter</option> -->
+                                            </select>
+                                        </div>
+                                        <label class="wr-input-label">Title</label>
+                                        <div class="wr-input-control">
+                                            <input name="title" type="text" class="form-control" id="title" placeholder="Untitled Widget">
+                                        </div>
+                                        <label class="wr-input-label">X - Axis</label>
+                                        <div class="wr-input-control">
+                                            <select class="form-control" id="xAxis" name="xAxis"></select>
+                                        </div>
+                                        <label class="wr-input-label">Y - Axis</label>
+                                        <div class="wr-input-control has-error has-feedback">
+                                            <select class="form-control" id="yAxis" name="yAxis"></select>
+                                            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                            <label id="cname-error" class="error" for="cname">The selected data type is not supported.</label>
+                                        </div>
+                                        <div class="wr-input-control wr-btn-grp">
+                                            <button class="ctrl-btn ctrl-btn-action btn-preview pull-right">Preview</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- /col-md-6 -->
+                                <div class="col-md-6">
+                                    <h4>Preview</h4>
+                                    <div class="bs-callout bs-callout-info" id="callout-helper-bg-specificity">
+                                        <p>Please select data to preview the chart.</p>
+                                    </div>
+                                    <div id="chartDiv"></div>
+                                </div>
+                            </div>
+                            <ul class="pager wizard">
+                                <div class="wr-input-control wr-btn-grp">
+                                    <button class="ctrl-btn ctrl-btn-action pull-left btn-previous">Previous</button>
+                                    <button class="ctrl-btn ctrl-btn-action pull-right">Add to Gadget Store</button>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /content -->
+                </div>
+            </div>
+            <!-- /content/body -->
+            <!-- footer -->
+            <footer class="footer">
+                <p>
+                    UES Dashboard Designer v.1.0.0 | &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://wso2.com/" target="_blank"><i class="fw fw-wso2"></i> Inc</a>. All Rights Reserved.
+                </p>
+            </footer>
+            <!-- /footer -->
+        </div>
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/operationsmenu.js"></script>
+        <script src="js/common.js"></script>
+    </body>
+</html>

@@ -358,3 +358,6 @@ br.c-both {
     padding-top:0;
     display:inline-block;
 }
+.wiz-lbl-large{
+    width: 300px;
+}
